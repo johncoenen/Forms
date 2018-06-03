@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    code {
+      color: #212121;
+      font-weight: 800;
+      background: khaki;
+    }
+
+    aside {
+      color: #212121;
+      font-weight: 700;
+      background: lightpink;
+    }
+  </style>
+  <title>Forms: Structure #1</title>
+</head>
+<body>
+  <h1>The &lt;form&gt; element</h1>
+  <p>The <code>&lt;form&gt</code>; is used to create HTML forms.x</p>
+  <h1>The &lt;fieldset&gt; and &lt;legend&gt; elements</h1>
+  <p>The <code>&lt;fieldset&gt;</code> is used to create a group of widgets that share the same purpose. The <code>&lt;fieldset&gt;</code> can be labeled by including a <code>&lt;legend&gt;</code> element just below the opening <code>&lt;fieldset&gt;</code> tag. The text content of the <code>&lt;legend&gt;</code> element formallu describes the purpose of the <code>&lt;fieldset&gt;</code> element it is inside.</p>
+  <form>
+    <fieldset>
+      <legend>Ice Cream Cones</legend>
+      <p>
+        <input type="radio" name="type" id="type_1" value="sugar">
+        <label for="sugar">Sugar Cone</label>
+      </p>
+      <p>
+        <input type="radio" name="type" id="type_2" value="cup">
+        <label for="cup">Single Scoop Cup</label>
+      </p>
+      <p>
+        <input type="radio" name="type" id="type_3" value="waffle">
+        <label for="waffle">Waffle Cone</label>
+      </p>
+    </fieldset>
+  </form>
+
+  <h1>The &lt;label&gt; element</h1>
+  <p>
+    The <code>&lt;label&gt;</code> element is important if you want to build accessible web forms. Screenreaders can speak a form element's label along with instructions.
+  </p>
+  <label for="name">Name:</label> 
+  <input type="text" id="name" name="user_name">
+  <p>The screen reader will output something like "Name, edit text", for this example.</p>
+  <p>Widgets can be nested inside of labels</p>
+  <label for="name">
+    Name: <input type="text" id="name" name="user_name">
+  </label>
+  <p>
+    <code>These two examples look exactly the same! Therefore, it is considered best practice to set the (for) attribute because some assitive technologies do not understand the implicit relationship btwn. labels and widgets.</code>
+  </p>
+  <h2>Clickable Lables</h2>
+  <p>Properly set up labels can be clickable.</p>
+  <form>
+    <p>
+      <label for="food_1">I like hotdogs</label>
+      <input type="checkbox" id="food_1" name="food_hotdog" value="1">
+    </p>
+    <p>
+      <label for="food_2">I like veggie burgers</label>
+      <input type="checkbox" id="food_2" name="food_veggieburger" value="2">
+    </p>
+  </form>
+  <h1>Multiple Labels</h1>
+  <p>Multiple labels can be put in a single widget. However this does not work with some assistive technologies. <code>In the case of multiple labels, the widget and it's labels should be nested in a single &lt;label&gt; element</code></p>
+  <p>Required fields are followed by <abbr title="required">*</abbr>.</p>
+  <div>
+    <h3>Example</h3>
+    <div>
+      <label for="username">Name:</label>
+      <input type="text" name="username">
+      <label for="username"><abbr title="required">*</abbr></label>
+    </div>
+    <p><code>The label is not read out at all with the input. You get "edit blank text". The multiple &lt;label&gt; elements confuse the screenreader.</code></p>
+    <h3>...Example works better like this:</h3>
+    <div>
+      <label for="username">
+        <span>Name:</span>
+        <input id="username" type="text" name="username">
+        <abbr title="required">*</abbr>
+      </label>
+    </div>
+    <p><code>
+      This is clearer. The label is read along with the input: "name star name edit text", and the labels are read separately. 
+    </code></p>
+    <h3>...But this is probably the best:</h3>
+    <div>
+      <label for="username">Name: <abbr title="required">*</abbr></label>
+      <input id="username" type="text" name="username">
+    </div>
+    <p><code>
+      This reads out the actual label all together. The label is read out with the input: "name star edit text".
+    </code></p>
+    <aside>Note: Different screen readers may give slightly different results.</aside>
+  </div>
+
+</body>
+</html>

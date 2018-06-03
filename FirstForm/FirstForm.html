@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <form action="/my-handling-form-page" method="post">
+    <div>
+      <label for="name">Name:</label>
+      <!-- The <input> tag is an empty element, it doesn't need a closing tag -->
+      <input type="text" id="name" name="user_name" value="the element is filled with this text" style="margin:0; width: 400px;">
+      <!-- <input> requires a value atttribute to add default text to the element-->
+    </div>
+    <div>
+      <label for="mail">E-mail:</label>
+      <input type="email" id="mail" name="user_mail">
+    </div>
+    <div>
+      <label for="msg">Message:</label>
+      <!-- The <textarea> tage is not an empty element, so it needs to be closed with an ending tag. -->
+      <textarea type="msg" name="user_message" style="margin:0px; width: 285px; height: 122px;">Unlike &lt;input&gt; there is no need to add a value attribute, the default text can simply be added in btwn. the opening and closing tags of the &lt;textarea&gt;.</textarea>
+    </div>
+    <div class="button">
+      <p>The &lt;button&gt; element accepts a <code>type</code> attribute, which accepts one of three values: 
+        <ul>
+          <li>submit</li>
+          <li>reset</li>
+          <li>buttons</li>
+        </ul> 
+      </p>
+      <button type="submit">Send your message</button>
+    </div>
+	</form>
+</body>
+</html>

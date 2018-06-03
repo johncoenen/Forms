@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Native Form Widgets</title>
+  <style>
+    mark {
+      background:#e1f3f8;
+      color: #112e51;
+      font-weight: 600;
+    }
+    aside {
+      background:#e59393;
+      color: #323a45;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <h1>Native Form Widgets</h1>
+  <p>This sectiom will focus on the different types of form widgets. We will be looking at the options for collecting different types of data.</p>
+  <p>All of the widgets we will be looking at are built into browsers. Keep in mind that these may differe from browser to browser. Custom form widgets can also be built, but that will be covered in a later section.</p>
+  <h2><strong>Form widget common attributes:</strong></h2>
+  <ul>
+    <li>
+      <h4><b>autofocus</b></h4> 
+      <p>Default value is FALSE. Puts focus on element when the page loads. Changes when user places focus on a different element.
+        </p>
+      </li>
+    <li>
+      <h4><b>disabled</b></h4>
+      <p>Default value is FALSE. Shows that the user can not act with this element.</p>
+    </li>
+    <li>
+      <h4><b>form</b></h4>
+      <p>Indicates the form element the widget is associated with. The value of the attribute must be the <em>id</em> attribute of a &lt;form&gt; elment in the same document.</p>
+    </li>
+    <li>
+      <h4><b>name</b></h4>
+      <p>The name of the element; this is submitted with the form data.</p>
+    </li>
+    <li>
+      <h4><b>value</b></h4>
+      <p>The element's initial value.</p>
+    </li>
+  </ul>
+  <h2>Text Input Fields</h2>
+  <p>Text &lt;input&gt; fields are an easy way to let the user enter any type of data. Ceratin text fields can be created for specific data types.</p>
+  <h3>Common Behaviors</h3>
+  <ul>
+    <li>
+      <p>Can be created as <mark>readonly</mark>(cannot be modified by user) or <mark>disabled</mark>(even if data is entered, it is not sent with the rest of the form data)</p>
+    </li>
+    <li>
+      <p>Can have a <mark>placeholder</mark>, which is text that appears inside the text input area and describes it's purpose.</p>
+    </li>
+    <li>
+      <p>Can be given a certain <mark>size</mark>(this indicates the size of the box).
+      </p>
+      <p>Can be given a maximum <mark>length</mark>(which is the max number of characters that can be entered in the box.</p>
+    </li>
+    <li>
+      <p>Can be used by <mark>spell checkers</mark>, if supported by the browser.</p>
+    </li>
+  </ul>
+  <h2>Single Line Text Fields</h2>
+  <p>These are created using <mark>&lt;input&gt;</mark> elements with the <mark>type</mark> attribute set to <b>text</b>(which is also the default value).</p>
+  <h4>Example:</h4>
+  <form>
+    Text Field:
+  <input type="text" id="comment" name="comment" value="This here is a text field">
+</form>
+  <aside><mark>Note:</mark>
+  One constraint exists, if text with line breaks is entered, the browser removes those before sending the data.
+  </aside>
+  <h3>Email address field</h3>
+  <p>Uses the value <mark>email</mark> for the <b>type</b> attribute.</p>
+  <form>
+  Email:
+    <input type="email" id="email" name="email" multiple>
+  </form>
+  <p>When this <b>type</b> is used, the user is required to input a proper email format, or it will issue an error. This is also known as client side verification because it is handled by the browser.</p>
+  <p>The <mark>multiple</mark> attribute is used to let the user enter multiple, comma separated, email addresses.</p>
+  <h3>Password field</h3>
+  <p>Uses the value <mark>password</mark> for the <b>type</b> attribute.</p>
+  <form>
+    Password
+    <input type="password" id="pwd" name="pwd">
+  </form>
+  <p>This input will not show what is entered into the field. It instead will show dots or asteriks so that it cannot be read by others.</p>
+  <mark>Security Note:</mark>
+  <aside>This will still send the data as plain text, which is a security no-no. Best practice prevention is to host the pages involving forms over a secure htts connection. This will encrypt the data before it is sent.</aside>
+  <h3>Search field</h3>
+  <p>The value <mark>search</mark> is used as the <b>type</b> attribute.</p>
+  <form>
+    Search:
+    <input style="border-radius:4px;" type="search" id="search" name="search">
+    <button>Clear</button>
+  </form>
+  <p>Search fields are often rendered with rounded corners for styling. They may also be given a button to clear the search field. The search field values can be automatically saved to be auto completed across multiple pages on the same site.</p>
+  <h3>Phone number field</h3>
+  <p>The value <mark>tel</mark> is used as the <b>type</b> value attribute.</p>
+  <form>
+    Phone:
+    <input type="tel" id="tel" name="tel">
+  </form>
+  <p>Different virtual keypads may be presented on mobile devices. There are no constraints on the value, letters and numbers may be used.</p>
+  <h3>URL fields</h3>
+  <p>The <mark>url</mark> type is used for the <b>type</b> attribute.</p>
+  <form>
+    URL:
+    <input type="url" id="url" name="url">
+  </form>
+  <p>This adds special validation constraints to the field, with the browser reporting an error if the invalid URLs are entered.</p>
+  <h2>Multi-line Text Fields</h2>
+  <p>These are defined using the <mark>&lt;textarea&gt;</mark> element.</p>
+  <form>
+    <h3>Default</h3>
+    <textarea name="multi-line" id="multi-line" cols="30" rows="10">The difference from single line text fields is that line breaks are allowed.</textarea>
+    <h3>Foucs</h3>
+    <textarea autofocus name="focus" id="disabled" cols="30" rows="10">This textarea has autofocus set.</textarea>
+    <h3>Disabled</h3>
+    <textarea disabled name="disabled" id="disabled" cols="30" rows="10">This is what a disabled textarea looks like. Notice if you click on it it does nothing.</textarea>
+  </form>
+  <h3>Note:</h3>
+  <aside>In most text areas the browser will give a drag handle for resizing on the box. This is found in the lower right hand corner of the box. This can be turned of by setting the text area's <mark>resize</mark> property to <b>none</b> using CSS.</aside>
+  <h3>Other &lt;textarea&gt; attributes</h3>
+  <ul>
+    <li>
+      <mark>cols(default: 20)</mark>
+      <p>The width of the area, using average charater widths.</p>
+    </li>
+    <li>
+      <mark>rows</mark>
+      <p>The number of visible text lines for the control.</p>
+    </li>
+    <li>
+      <mark>wrap(default: soft)</mark>
+      <p>Indicates how the control wraps text. <strong style="font-size=32px;">soft</strong> or <strong style="font-size=32px;">hard</strong> can be used.</p>
+    </li>
+    <mark>Notes:</mark>
+    <p>The <b>&lt;textarea&gt;</b> element is an empty element, which means it can have no child elements. </p>
+    <p>The <mark><b>&lt;textarea&gt;</b></mark> element is a regular element and can contain <mark>text content children</mark></p>
+    <ol>
+      <h4>Key points for the regular element and text content children:</h4>
+      <li>
+        <p>Instead of defining a value attribute, like with the <mark>&lt;input&gt;</mark> element, for <mark>&lt;textarea&gt;</mark> the default text is entered between the start and end taggs.</p>
+      </li>
+      <li>
+        <p>
+          The <mark>&lt;textarea&gt;</mark> element only accepts <b>text</b> content. Any HTML content put inside the <mark>&lt;textarea&gt;</mark> is rendered as if it was plain text.
+        </p>
+      </li>
+    </ol>
+  </ul>
+</body>
+</html>
