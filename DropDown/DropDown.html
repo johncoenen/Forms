@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    b {
+      color: #212121;
+      background: #aeb0b5;
+      font-weight: 700;
+      margin: 3px;
+      padding: 2px;
+    }
+
+    code {
+      color: #ffffff;
+      background: #cd2026;
+      font-weight: 600;
+      margin: 3px;
+      padding: 2px;
+    }
+  </style>
+  <title>Drop-Downs</title>
+</head>
+
+<body>
+  <h1>Drop Down Widgets</h1>
+  <p>Lets the user select from a list of options. Benefits UI becuase they do not take up much space.</p>
+  <p>There are two HTML options for drop downs:</p>
+  <ul>
+    <li>
+      <h3>select box</h3>
+    </li>
+    <li>
+      <h3>autocomplete box</h3>
+    </li>
+  </ul>
+  <h2>Select Box</h2>
+  <p>To create a select box use the
+    <code>&lt;select&gt;</code> element with one or more
+    <code>&lt;option&gt;</code> elements as its children, each with a specific value.</p>
+  <h4>EXAMPLE:</h4>
+  <select name="demo" id="demo">
+    <option value="shrimp">Shrimp</option>
+    <option value="white_wine">White Wine</option>
+    <option value="gouda">Gouda</option>
+  </select>
+  <p>The default value is set by using the
+    <b>selected</b> attribute on the
+    <code>&lt;option&gt;</code> element. This preselects that element when the page loads.</p>
+  <h3>
+    <b>&lt;optgroup&gt;</b>
+  </h3>
+  <p>&lt;optgroup&gt; is used when you want to nest elements to create groups of values</p>
+  <h4>EXAMPLE:</h4>
+  <select name="groups" id="groups">
+    <optgroup label="Veggies">
+      <option>Onion</option>
+      <option>Celery</option>
+      <option>Carrot</option>
+    </optgroup>
+    <optgroup label="Protiens">
+      <option>Meat</option>
+      <option>Nuts</option>
+      <option>Beans</option>
+    </optgroup>
+  </select>
+  <p>If an
+    <code>&lt;option&gt;</code> element is set with a
+    <b>value</b> attribute, that value will be sent on submission. If
+    <b>value</b> is not used, the
+    <code>&lt;option&gt;</code> element is used as the select box's value. If the
+    <b>label</b> attibute is set on
+    <code>&lt;optgroup&gt;</code>, it may look like a selectable option, but it is not.</p>
+  <h2>Multiple Choice</h2>
+  <p>Add the
+    <b>multiple</b> attribute to the
+    <code>&lt;select&gt;</code> element to enable the user to select several options by using the OS's default keyboard shortcut(Often holding |cmd + ctrl| or holding down |shift| and clicking multiple values will work).
+  
+  </p>
+  <h4>EXAMPLE:</h4>
+  <select multiple name="multi" id="multi">
+    <option>Dog</option>
+    <option>Cat</option>
+    <option>Rat</option>
+  </select>
+  <h2>Autocomplete</h2>
+  <h3>
+    <b>&lt;datalist&gt;</b>
+  </h3>
+  <p>The
+    <code>&lt;datalist&gt;</code> element can be paired with some child
+    <code>&lt;option&gt;</code> elements to specify the values to display. These provide suggestions for the user.</p>
+  <p>The data list is then bound to a text field using the
+    <b>input</b> element on the
+    <b>list</b> attribute. When the user begins to enter text in the field, the autocomplete will suggest an option if viable.
+    </p>
+  <h4>EXAMPLE:</h4>
+  <label for="myMovie">What is your favorite film genre?</label>
+  <input type="text" name="myMovie" id="myMovie" list="mySuggestion">
+  <datalist id="mySuggestion">
+    <option>Comedy</option>
+    <option>Drama</option>
+    <option>Action</option>
+    <option>Horror</option>
+    <option>Super-Hero</option>
+    <option>Sci-Fi</option>
+    <option>Foreign</option>
+    <option>Romance</option>
+  </datalist>
+  <p>
+    <b>&lt;datalist&gt;</b> elements are relatively new to HTML forms, so browser support may vary. A good fallback for this
+    scenario is to wnclose the
+    <code>&lt;option&gt;</code> elements within a
+    <b>&lt;select&gt;</b> element inside the
+    <b>datalist</b> element. Browsers that have support will ignore anything but the
+    <code>&lt;option&gt;</code> elements, and will work. If the browser doesn't support
+    <b>&lt;datalist&gt;</b> it will display the label and the select box.</p>
+  <h2>Checkable Items</h2>
+  <p>The state is changed when clicked on. There are two types: the
+    <b>checkbox</b> and the
+    <b>radio button.</b> Keep in mind that these work a bit differently than other widgets. The big difference is checkable
+    items values are only sent if they are checked. If they are not checked nothing is sent. Not even their name.</p>
+  <p>For usability purposes enclose each list of related items in a
+    <b>&lt;fieldset&gt;</b> elemen which includes a
+    <b>&lt;legend&gt;</b> that describes the list. Also each
+    <code>&lt;label&gt;/&lt;input&gt;</code> elements should be contatined in its own list item. Values need to be provided for each type of input inside the
+    <b>value</b> attribute. If no value is specified the value
+    <b>on</b> is used.</p>
+  <h3>Check Box</h3>
+  <input type="checkbox" checked id="churros" name="churros" value="churros">
+  <p>If the <code>checked</code> attribute is included it auto-checks that box on page load.</p>
+  <h3>Radio Button</h3>
+  <input type="radio" checked id="chimichanga" name="food">
+  <p>Multiple radio buttons can be grouped together. If they have the same <b>name</b> attribute, they are considered in the same group of buttons. Only one button per group may be checked in this case. When one is checked all others become unchecked. When the form is sent only the value of the checked button gets sent. If none are checked it and the whole group are considered to be in an unknown state, and no value is sent.</p>
+  <fieldset>
+    <legend>Who is your favorite super-hero?</legend>
+    <ul>
+      <li>
+        <label for="Iron-Man">Iron Man</label>
+        <input type="radio" checked id="Iron-Man" name="hero">
+      </li>
+      <li>
+        <label for="Sprider-Man">Spider Man</label>
+        <input type="radio" checked id="Spider-Man" name="hero">
+      </li>
+      <li>
+        <label for="Squirrel-Girl">Squirrel Girl</label>
+        <input type="radio" checked id="Squirrel-Girl" name="hero">
+      </li>
+    </ul>
+  </fieldset>
+  <h2>Buttons</h2>
+  <p>There are three types of HTML buttons for forms:</p>
+  <ul>
+    <li>
+      <h4>Submit</h4>
+      <p>Sends the form data to the server.</p>
+    </li>
+    <li>
+      <h4>Reset</h4>
+      <p>Resets all form widgets to the default values.</p>
+    </li>
+    <li>
+      <h4>Anonymous</h4>
+      <p>Buttons that have no automatic effect but can be customized using JavaScript code. If you omit the <b>type</b> attribute, this is the default value.</p>
+    </li>
+  </ul>  
+      <p>Buttons are created using the <code>&lt;button&gt;</code> element or an <code>&lt;input&gt;</code> element. It's the value of the <b>type</b> attribute that specifies what kind of button is displayed.</p>
+    <h3><b>submit</b></h3>
+    <button type="submit ">
+      This is a
+      <br>
+      <stong>submit button</stong>
+    </button>
+    
+    <input type="submit" value="This here is a submit button">
+    <h3>
+      <b>reset</b>
+    </h3>
+    <button type="reset ">
+      This is a
+      <br>
+      <strong>reset button</strong>
+    </button>
+    <input type="reset" value="This is a reset button">
+    
+    <h3>
+      <b>anonymous</b>
+    </h3>
+    <button type="button">
+      This is a
+      <br>
+      <strong>anonymous button</strong>
+    </button>
+    
+    <input type="button" value="This is a anonymous button">
+    <p>
+      There are differences in how button and input display in browsers.
+    </p>
+</body>
+</html>
