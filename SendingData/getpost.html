@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    code {
+      display: block;
+      background: grey;
+      opacity: 0.75;
+      width: 100%;
+      font-size: 22px;
+      font-weight: 600;
+      margin: 2px 2px 2px 2px;
+      padding: 1px 1px 1px 1px;
+    }
+    blockquote {
+      display: block;
+      width: 50%;
+      background:gold;
+      opacity: 0.75;
+      font-size: 18px;
+      font-weight: 600;
+      margin: 1px auto;
+    }
+  </style>
+  <title>Sending Form Data</title>
+</head>
+<body>
+  <h1>GET and POST methods</h1>
+  <h2>GET method EXAMPLE:</h2>
+  <form action="http://google.com" method="GET">
+    <div>
+      <label for="say">What would you like to say?</label>
+      <input name="say" id="say" value="Greetings">
+    </div>
+    <div>
+      <label for="to">Who do you want to say this to?</label>
+      <input name="to" id="to" value="Person">
+    </div>
+      <div>
+        <button>Send that greeting</button>
+      </div>
+  </form>
+  <p>
+    When the form is sent, by clicking the button, this: https://www.google.com/?say=Greetings&to=Person is what appears in the address bar.
+    The data is added to the URL as a series of name/value pairs.
+  </p>
+  <p>
+    The HTTP request looks like this:<br><br>
+    <code>
+      GET /?say=Greetings&to=Person HTTP/1.1
+      <br>
+      Host: google.com
+    </code>
+  </p>
+  <h2>POST method EXAMPLE:</h2>
+  <p>With the <b>POST</b> method, the browser talks to a server and asks for a response that takes into account the data provided in the body of the HTTP request.</p>
+  <blockquote>
+    "Hey server, take a look at this data<br> and send me back an appropriate response."
+  </blockquote>
+  <p>When the <b>POST</b> method is used te data is appended to the body of the HTTP request.</p>
+  <form action="http://google.com" method="POST">
+    <div>
+      <label for="say">What greeting will you use?</label>
+      <input name="say" id="say" value="Hello">
+    </div>
+    <div>
+      <label for="to">Who are you speaking with?</label>
+      <input name="to" id="to" value="Somebody">
+    </div>
+    <div>
+      <button>Send that greeting</button>
+    </div>
+  </form>
+  <p>** In this case you get an error, because the URL does not allow the use of POST **</p>
+  <p>This is what the HTTP request looks like:<br>
+  <code>
+    POST / HTTP/1.1<br>
+    Host: google.com<br>
+    Content-Type: application/x-www-form-urlencoded<br>
+    Content-Length: 19<br>
+
+    Say=Hello&to=Person
+  </code>
+  </p>
+  <p>Visit https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Sending_and_retrieving_form_data<br>
+  for more on security and how different frameworks use GET and POST</p>
+</body>
+</html>

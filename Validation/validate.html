@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    article {
+      display: block;
+      width: 50%;
+      border: 1px solid black;
+      margin-bottom: 4px;
+      padding-left: 2px;
+    }
+  </style>
+  <title>Form Data Validation</title>
+</head>
+
+<body>
+  <header align="center">
+    <h1>Form Validation</h1>
+    <p>Helpful hints appear to guide users on how to properly format the data they enter. This ensures that when the data is
+      submitted it will work with the application.</p>
+  </header>
+  <h2>Examples of Form Validation:</h2>
+  <article>
+    <p>
+      This field is required(Can't be left blank)
+    </p>
+  </article>
+  <article>
+    <p>
+      Please enter your phone number using the
+      <b>xxx-xxx-xxxx</b> format.
+    </p>
+  </article>
+  <article>
+    <p>
+      Please enter a valid email address.(person@peoples.com)
+    </p>
+  </article>
+  <article>
+    <p>
+      Passwords should be between 9 and 30 characters, contain at least one uppercase letter, at least one symbol, and at least
+      one number.
+    </p>
+  </article>
+  <section>
+    <h2>Different Types of Form Validation</h2>
+    <article>
+      <h3>Client-side validation</h3>
+      <ul>
+        <li>
+          occurs in the browser
+        </li>
+        <li>
+          user friendly, instant resonse
+        </li>
+        <li>
+          <b>Javascript</b> validation is customizable
+        </li>
+        <li>
+          <b>Built-in form validation</b> using HTML5. Has better performance, but is not a customizable as Javascript form
+          validation.
+        </li>
+      </ul>
+    </article>
+    <article>
+      <h3>Server-side validation</h3>
+      <ul>
+        <li>
+          This occurs on the server, after the data has been submitted.
+        </li>
+        <li>
+          Code is used server side to validate the data before it is sent to a database. If it fails, a response is sent back to the
+          client which tells the user which corrections to make.
+        </li>
+        <li>
+          Not as user friendly as client side validation. It requires the entire form be sent to the server, before any errors are
+          submitted to the user.
+        </li>
+        <li>
+          Does provide a more secure way of dealing with data. Many server-side frameworks have built in validation and security features.
+        </li>
+        <li>Developers often use a combination of these two in real world applications.</li>
+      </ul>
+    </article>
+    <h2>Built-in-form validation(HTML5)</h2>
+    <ul>
+      <li>
+        No scripts required!
+      </li>
+      <li>
+        HTML5 form elements can use
+        <b>validation attributes</b> to specify rules for form input.
+        <ul>
+          <li>no blank values</li>
+          <li>min/max lengths of data</li>
+          <li>number only</li>
+          <li>pattern matching</li>
+        </ul>
+      </li>
+
+      
+    <h4>An element is valid if:</h4>
+      
+      <ul>
+        <li>The element matches the
+          <b>:valid</b> CSS pseudo-class, which lets you apply a specific style to valid elements.
+        </li>
+        <li>
+          the user sends the data and the browser submits the form, and nothing stops it(e.g. Javascript).
+        </li>
+      </ul>
+
+    
+
+  <h4>An element is invalid if:</h4>
+    <ul>
+      <li>the element matches the
+        <b>:invalid</b> CSS pseudo-class, which lets you apply specific styles to invalid elements.</li>
+      <li>the user sends the data, and the browser bloks the form and shows an error message.</li>
+    </ul>
+  </ul>
+  </section>
+  <section>
+    <h2>Validation: Constraints on &lt;input&gt; elements</h2>
+  </section>
+</body>
+
+</html>

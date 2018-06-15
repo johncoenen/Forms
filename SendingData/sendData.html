@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Sending Form Data</title>
+</head>
+<body>
+  <h1>Basic Overview of Client/Server Process</h1>
+  <ul>
+    <li>The client, for example a web browser, sends a request to a server. Usually this is a web server like Apache, Nginx, IIS, etc.</li>
+    <li>The server uses the HTTP protocol to process the request.</li>
+    <li>The server then sends a response, also using the HTTP protocol, back to the client.</li>
+    <li>In other words, the HTML form is an easy, user friendly way to use an HTTP request to send the form data to the server.</li>
+  </ul>
+  <h1>How to Send Data on the Client Side</h1>
+  <ul>
+    <li>The <code>&lt;form&gt;</code> element defines how the data will be sent.</li>
+    <li>The attributes used with the <code></code>&lt;form&gt;</code> element can be configured to request what is to be sent when the submit button is clicked.</li>
+    </li>The <b>action</b> and <b>method</b> attributes are the most important.</li>
+  </ul>
+  <h2>The <code>action</code> attribute</h2>
+  <ul>
+    <li>This attribute defines where the data gets sent.</li>
+    <li>It must be a valid URL to work.</li>
+    <li>If a URL is not present, the data is sent to the URL of the page containing the form.</li>
+    <li>This is an absolute URL where data can be sent: <code>&lt;form action="http://foo.com"&gt;</code></li>
+    <li>This is a relative URL, wherein data is sent to a different URL on the server: <code>&lt;form action="/somewhere_else"&gt;</code></li>
+  </ul>
+  <h2>The <code>&lt;method&gt;</code> attribute</h2>
+  <li>This defines how data is sent.</li>
+  <li><strong>HTTP protocol</strong> provides several ways to make a request.
+    <ol>
+      <p>These two are the most popular:</p>
+      <li>GET</li>
+      <li>POST</li>
+    </ol>
+  </li>
+  <li><strong>HTTP protocol:</strong> The browser sends a request(to a URL) each time a resource is wanted.</li>
+  <li>This request consists of two parts
+    <ol>
+      <li>header: contains a set of global metadata about the browser's capabilities</li>
+      <li>body: contains information for the server to process the specific request.</li>
+    </ol>
+  </li>
+  <h3>The GET method</h3>
+  <ul>
+    <li>GET is used by the browser to send back a given resource.</li>
+    <li>When a form is sent using the GET method, the data sent to the server is appended to the URL.</li>
+  </ul>  
+    <h4>EXAMPLE:</h4>
+    <form action="http://1foo1foo1.com" method="get">
+      <div>
+        <label for="say">Whatchoowanna say?</label>
+        <input type="say" id="say" value="Hello">
+      </div>
+      <div>
+        <label for="to">Whoyouwanna say it to?</label>
+        <input type="to" id="to" value="MeeMaw">
+      </div>
+      <div>
+        <button>Send my greeting</button>
+      </div>
+    </form>
+    <p>This example uses the GET methof. When this gets sent the URL <b>www.foo.com/?say=Hello&to=MeeMaw</b> appears in the address bar when the submit button is clicked.</p>
+</body>
+</html>
