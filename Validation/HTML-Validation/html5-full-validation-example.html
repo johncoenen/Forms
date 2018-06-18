@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./Styles/full.css">
+  <title>HTML5 Full Validation Example</title>
+</head>
+<body>
+  <h1>HTML5 Full Validation Example</h1>
+  <p>This form illustrates the usage of HTML's built in validation features.</p>
+  <form>
+    <p>
+      <fieldset>
+        <legend>Title<abbr title="mandatory field indicator">*</abbr></legend>
+        <input type="radio" required name="title" id="r1" value="Mr."><label for="r1">Mr.</label>
+        <input type="radio" required name="title" id="r2" value="Mrs."><label for="r2">Mrs.</label>
+      </fieldset>
+    </p>
+    <p>
+      <label for="n1">Age:  </label>
+      <input type="number" min="12" max="120" step="1" id="n1" name="age" pattern="\d+">
+    </p>
+    <p>
+      <label for="t1">What's your favorite veggie?<abbr title="mandatory field indicator">*</abbr></label>
+      <input type="text" id="t1" name="veggie" list="l1" required pattern="[Cc]arrot|[Ee]ggplant|[Ll]ettuce|[Oo]nion|[Pp]arsnip">
+      <datalist id="l1">
+        <option>Carrot</option>
+        <option>Eggplant</option>
+        <option>Lettuce</option>
+        <option>Onion</option>
+        <option>Parsnip</option>
+      </datalist>
+    </p>
+    <p>
+      <label for="t2">Email: </label>
+      <input type="email" id="t2" name="email">
+    </p>
+    <p>
+      <label for="t3">Leave a message or add additional notes here: </label>
+      <textarea name="msg" id="t3" maxlength="140" cols="20" rows="10"></textarea>
+    </p>
+    <p>
+      <button>Submit</button>
+    </p>
+  </form>
+</body>
+</html>

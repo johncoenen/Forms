@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Custom Error Message w/ Javascript</title>
+</head>
+<body>
+  <h1>Custom Error Message</h1>
+  <p>Javascript must be used to customize error messages. This can't be done using CSS at the moment.</p>
+  <p>HTML5 references the constraint validation API to check and change state of a form element. A simple example is changing the text of an error message.</p>
+  <form>
+    <label for="mail">Please provide your email to subscribe to our mailing list.</label>
+    <input type="email" id="mail" name="mail">
+    <button>Submit</button>
+  </form>
+  <p>This example will use the <b><mark>setCustomValidity()</mark> Javascript method.</b></p>
+  <script>
+    var email = document.getElementById("mail");
+
+    email.addEventListener("input", function (event) {
+      if (email.validity.typeMismatch) {
+        email.setCustomValidity("Please supply a valid email.")
+      } else {
+        email.setCustomValidity("");  
+      }
+    });
+  </script>
+</body>
+</html>

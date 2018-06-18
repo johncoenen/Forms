@@ -1,0 +1,54 @@
+/* Styles for js-validation-1.html */
+
+    body {
+      font: 1em sans-serif;
+      padding: 0;
+      margin: 0;
+    }
+
+    form {
+      max-width: 200px;
+    }
+
+    p * {
+      display: block;
+    }
+
+    input[type=email]{
+      -webkit-appearance: none;
+
+      width: 100%;
+      border: 3px solid salmon;
+      margin: 1px;
+
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      font-size: 90%;
+      box-sizing: border-box;
+    }
+
+    /* Styles for invalid fields */
+    input:invalid {
+      border-color: #900;
+      background-color: #FDD;
+    }
+
+    input:focus:invalid {
+      outline: none;
+    }
+
+    /* Styles for error messages */
+    .error {
+      width: 100%;
+      padding: 0;
+
+      font-size: 80%;
+      color: whitesmoke;
+      background-color: #900;
+
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    .error.active {
+      padding: 0.3em;
+    }

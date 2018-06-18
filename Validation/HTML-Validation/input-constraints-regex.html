@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    input:invalid {
+      border: 2px dashed red;
+    }
+
+    input:valid {
+      border: 2px solid green;
+    }
+  </style>
+  <title>Input Constraints | Simple Version</title>
+</head>
+
+<body>
+
+  <header>
+    <h1>Input Constraints w/ Pattern(regex)</h1>
+  </header>
+
+  <header>
+    <h2>Validating &lt;input&gt; with HTML5</h2>
+  </header>
+  <p>Ex. Choose your favorite junk food. There are two choices: pretzels or chips. There will be a text
+    <b>&lt;input&gt;</b> with a matching label, and a submit
+    <b>&lt;button&gt;</b>
+  </p>
+
+  <h3>Validating using the regular expression</h3>
+  <ul>
+    <li>uses the
+      <b>pattern</b> attribute</li>
+    <li>
+      <b>pattern</b> expects a regex as its value</li>
+    <li>regex is used to match pattern combinations in texxt strings</li>
+    <li>ideal for form validation</li>
+
+    <h4>some regex example patterns:</h4>
+    <li>
+      <ul>
+        <li>
+          <h5>
+            <mark>[Ll].*k</mark>
+          </h5>
+          <p>A single char. that is upper or lowercase L, followed by zero or more chars of any type, followed by a single lowercase
+            l</p>
+        </li>
+        <h5>
+          <mark>[A-Z][A-Za-z' -]+</mark>
+        </h5>
+        <li>A single uppercase char. followd by one or more chars that are upper or lowercase letters, a dash, an apostraphe,
+          or a space. This could be used to validate the city name of English speaking countries, which start with a capital
+          letter and may contain a dash, space, or apostraphe, but no other special chars.</li>
+      </ul>
+      <h5>
+        <mark>[0-9]{3}[ -][0-9]{3}[ -][0-9]{4}</mark>
+        <ul>
+          <li>A simple match for a US domestic phone number - three digits, followed by a space or dash, followed by three digits,
+            followed by a space or dash, followed by four digits. This can be more complex if you want to add parantheses...
+          </li>
+        </ul>
+      </h5>
+    </li>
+  </ul>
+  </ul>
+
+
+  <h3>Example:</h3>
+  <p>In this example
+    <b>&lt;example&gt;</b> takes one of two possible values: the string"chips" or the string "pretzels".</p>
+  <p>If you try to change the value inside the pattern attribute it will affect the values that can be entered into the input.
+  </p>
+  <!--
+    <form>
+    <label for="choose">Would you prefer lemon or lime?</label>
+    <input id="choose" name="i_like" required pattern="lemmon|lime">
+    <button>Submit</button>
+  </form>
+-->
+<!--  <form>
+    <label for="city">What city do you live in?</label>
+    <input type="text" name="city" required pattern="[A-Z]{A-Za-z' -]+">
+    <button>Submit</button>
+  </form>
+-->
+<form>
+<label for="phone"> Enter your phone # using xxx-xxx-xxxx as the format:</label>
+<input name="phone" required pattern="[0-9]{3}[-][0-9]{3}[-][0-9]{4}">
+<button>Submit</button>
+</form>
+</body>
+</html>

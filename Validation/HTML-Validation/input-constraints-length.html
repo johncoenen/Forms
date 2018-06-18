@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+      input:invalid {
+        border: 2px dashed red;
+      }
+  
+      input:valid {
+        border: 2px solid green;
+      }
+
+      mark {
+        background: violet;
+        opacity: 65%;
+        color: blue;
+      }
+    </style>
+    <title>Input Constraints | length of entry</title>
+  </head>
+<body>
+  <h1>Constraints on length of input entries</h1>
+  <ul>
+    <li>Any text field created by 
+      <mark>&lt;input&gt;</mark> or <mark>&lt;textarea&gt;</mark> can be constrained using <code>minlength</code> and <code>maxength</code> attributes.</li>
+      <li>Any field that is longer than <code>maxlength</code> or shorter than <code>minlength</code> is invalid</li>
+      <li>for number fields <code>&lt;input type="number"&gt;</code>, the min/max atributes also provide a validation constraint. If it is lower than min or higher than max it is invalid.</li>
+  </ul>
+  <h2>Example:</h2>
+  <form>
+    <div>
+      <label for="opt">Would you prefer lime or lamb?</label>
+      <input id="opt" name="my_choice" required minlength="4" maxlength="4">
+    </div>
+    <div>
+      <label for="number">How MANY?</label>
+      <input type="number" id="number" name="amount" value="1" min="1" max="10">
+    </div>
+    <div>
+      <button>Submit</button>
+    </div>
+  </form>
+</body>
+</html>

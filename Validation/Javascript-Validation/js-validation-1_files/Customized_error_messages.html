@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- saved from url=(0123)https://mdn.mozillademos.org/en-US/docs/Learn/HTML/Forms/Form_validation$samples/Customized_error_messages?revision=1381297 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <link href="./samples.37902ba3b7fe.css" rel="stylesheet" type="text/css">
+        
+        <title>Form data validation - Customized_error_messages - code sample</title>
+    </head>
+    <body>
+        
+            <form>
+  <label for="mail">I would like you to provide me an e-mail</label>
+  <input type="email" id="mail" name="mail">
+  <button>Submit</button>
+</form>
+        
+        
+            <script>
+                var email = document.getElementById("mail");
+
+email.addEventListener("input", function (event) {
+  if (email.validity.typeMismatch) {
+    email.setCustomValidity("I expect an e-mail, darling!");
+  } else {
+    email.setCustomValidity("");
+  }
+});
+            </script>
+        
+    
+</body></html>

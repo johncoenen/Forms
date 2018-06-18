@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    input:invalid {
+      border: 2px dashed red;
+    }
+
+    input:valid {
+      border: 2px solid green;
+    }
+  </style>
+  <title>Input Constraints | Simple Version</title>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Input Constraints</h1>
+    </header>
+    <section>
+      <header>
+        <h2>Validating &lt;input&gt; with HTML5</h2>
+      </header>
+      <p>Ex. Choose your favorite junk food. There are two choices: pretzels or chips. There will be a text <b>&lt;input&gt;</b> with a matching label, and a submit <b>&lt;button&gt;</b></p>
+      <article>
+        <form>
+          <label for="choose">Choose either chips or pretzels.
+          </label>
+          <input id="choose" name="i_want">
+          <button>Submit</button>
+        </form>
+      </article>
+    </section>
+  </div>
+</body>
+</html>
