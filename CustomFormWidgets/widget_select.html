@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="styles.css">
+  <title>Rebuilding the select element</title>
+</head>
+
+<body>
+  <h1>Creating a custom &lt;select&gt; widget</h1>
+
+  <ul>
+    <h2>Rebuilding</h2>
+    <li>
+      Start with an existing widget(&lt;select&gt;)</li>
+    <li>Try to mimic something that looks like what you want.</li>
+    <h2>Our Widget States</h2>
+    <ul>
+        <h3>Normal:</h3>
+        <ul>
+          <li>on page load</li>
+          <li>when user clicks outside widget during active state, returns to normal</li>
+          <li>the user moves focus to another widget</li>
+        </ul>
+
+        <h3>Active</h3>
+        <ul>
+          <li>the user clicks on it</li>
+          <li>the user hits the tab key and it gains focus</li>
+          <li>the widget is in its open state and the user clicks on the widget</li>
+        </ul>
+        <h3>Open</h3>
+        <ul>
+          <li>the widget is in any other state than open and the user clicks on it</li>
+        </ul>
+      </li>
+    </ul>
+  </ul>
+  <h2>Our Widget Values</h2>
+  <p>It is important to define how the values in the widget change.</p>
+  <h3>The value changes when:</h3>
+  <ul>
+    <li>The user clicks on an option during it's open state</li>
+    <li>The user hits up/down arrow keys when eidget is in active state</li>
+  </ul>
+  <h2>Widget Option Behavior</h2>
+  <ul>
+    <li>when widget is open, the selection will be highlighted</li>
+    <li>mouse over an option results in the item becoming highlighted and previously highlighted item returns to normal state</li>
+  </ul>
+  <h2>HTML Structure and Semantics</h2>
+  <p>This is the next step of our project and we will be focusing on how to define the HTML and also add some basic semantics for our redesigned &lt;select&&gt; element</p>
+
+  <!-- Widget Container 
+    The tabindex attr. gives the user the ability to focus the widget.
+  -->
+  <div class="select" tabindex="0">
+    <!-- The span element is used to display current value-->
+    <span class="value">Banana</span>
+
+    <!-- This is theoptions container, includes list-->
+    <ul class="optlist">
+      <!--Each option only contains the display value, the real value will be sent w/ the form data-->
+      <li class="option">Banana</li>
+      <li class="option">Chocolate</li>
+      <li class="option">Vanilla</li>
+      <li class="option">Almond</li>
+      <li class="option">Bubblegum</li>
+    </ul>
+  </div>
+</body>
+
+</html>
