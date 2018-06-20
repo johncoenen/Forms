@@ -130,3 +130,14 @@
   background: #000;
   color: #FFFFFF;
 }
+
+/* CSS Selectors used to hide unused elements */
+.widget select,
+.no-widget select {
+  /* Here is what is happening:
+     We either have the body class "widget" so we    hide the actual <select> element, or the body class has not changed so the elements whose class is "select" is hidden */
+     position: absolute;
+     left: -5000em;
+     height: 0;
+     overflow: hidden;
+}
