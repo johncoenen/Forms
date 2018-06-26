@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="styles1.01.css">
-  <title>Example Select Widget v1.01</title>
+  <title>Example Select Widget v1.02</title>
 </head>
 <body class="no-widget">
  <!-- <h1>Example Select Widget v1.01</h1>
@@ -33,9 +33,12 @@
   </div>
 
 </form>
+<!-- This is the "Making the job easier" version and will use an external javascript file-->
+<script src="widget1.02.js"></script>
 <!-- Here we add a Javascript switch to determine if the script is running or not.
-- Essentially if the page loads and the scriot doesn't run the no-widget class is removed, and the widget class gets added. This swaps the visibility of the <select> element and the custom widget.
+  - Essentially if the page loads and the scriot doesn't run the no-widget class is removed, and the widget class gets added. This swaps the visibility of the <select> element and the custom widget.
 -->
+<!-- 
 <script>
   
   window.addEventListener("load", function () {
@@ -44,6 +47,7 @@
   });
 
 </script>
+-->
 <!-- TODO: fix so that it hides one of the elements, as of now they both load, but only one works. Have to deal with an edge case with newer browser where it wants me to set "passive" on mousescroll.-->
 </body>
 </html>
