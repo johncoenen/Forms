@@ -1,61 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="">
-  <title>Example Select Widget v1.04</title>
-  <style>
-    .widget select,
-    .no-widget .select {
-      position: absolute;
-      left: -5000em;
-      height: 0;
-      overflow: hidden;
-    }
-  </style>
-</head>
-<script>
-  window.addEventListener("load", function () {
-    document.body.classList.remove("no-widget");
-    document.body.classList.add("widget");
-  })
-</script>
-<body class="no-widget">
- 
-  <!-- Begin Form -->
-  <form>
-    <select name="iceCream" >
-      <option>Banana</option>
-      <option>Chocolate</option>
-      <option>Vanilla</option>
-      <option>Strawberry</option>
-      <option>Bubblegum</option>
-    </select>
-
-
-  <div class="select">
-    <span class="value">Banana</span>
-      <ul class="optList hidden">
-        <li class="option">Banana</li>
-        <li class="option">Chocolate</li>
-        <li class="option">Vanilla</li>
-        <li class="option">Strawberry</li>
-        <li class="option">Bubblegum</li>
-      </ul>
-  </div>
-
-</form>
-<!-- This script will use the standard DOM API to do the work.
+/* This script will use the standard DOM API to do the work.
   These are the features we will use:
   - class list (riskiest)
   - addEventListener
   - ForEach (not DOM, modern JS)
   - querySelector and querySelectorAll
--->
-<script>
-  // Add forEach to NodeList to treat it like an Array
+*/
+// NodeList to treat it like an Array
   NodeList.prototype.forEach = function (callback) {
     Array.prototype.forEach.call(this,callback);
   }
@@ -175,8 +125,3 @@ window.addEventListener('load', function(){
     });
   });
 });
-
-// TODO: Handle widget's value
-</script>
-</body>
-</html>

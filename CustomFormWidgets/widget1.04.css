@@ -1,0 +1,121 @@
+/* Styles for widgetv1.04 */
+
+/* Add styles for three types of state */
+
+.select {
+  /* Creates positioning context for the list & options */
+  position: relative;
+  /* Widget becomes part of the text flow and is resizable */
+  display: inline-block;
+}
+
+.select.active,
+.select:focus {
+  outline: none;
+
+  /* Be sure that the active state is visible */
+  box-shadow: 0 0 3px 1px #227755;
+}
+
+/* styles for options list */
+.select .optList {
+  /* display options below the value */
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+.select .optList.hidden {
+  /* hide the list in a accessible way */
+  max-height: 0;
+  visibility: hidden;
+}
+
+/* aesthetic styles */
+.select {
+  font-size: 0.625em; /* 10px */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  /* add extra room for icon of down arrow */
+  padding: .1em 2.5em .2em .5em;
+  width: 10em;
+
+  border: .2em solid #000000;
+  border-radius: .4em;
+  box-shadow: 0 .1em .2em rgba(0,0,0,.45);
+
+  background : #F0F0F0;
+  background : -webkit-linear-gradient(90deg, #E3E3E3, #fcfcfc 50%, #f0f0f0);
+  background : linear-gradient(0deg, #E3E3E3, #fcfcfc 50%, #f0f0f0);
+}
+
+.select .value {
+  /* value can be widrer than widget, so dont let it change width */
+  display: inline-block;
+  width: 100%;
+  overflow: hidden;
+
+  vertical-align: top;
+
+  /* if content overflows... */
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.select:after {
+  content: "V";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  height: 100%;
+  width: 2em;
+  padding-top: .1em;
+
+  border-left: .2em solid #000000;
+  border-radius: 0 .1em .1em 0;
+
+  background-color: #000000;
+  color: #FFF;
+  text-align: center;
+}
+
+/* styles for options list */
+.select .optList {
+  z-index: 2;
+
+  /* reset for default ul element styles */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  min-width: 100%;
+
+  max-height: 10em;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  border: .2em solid #000000;
+  border-top-width: .1em;
+  border-radius: 0 0 .4em .4em;
+
+  box-shadow: 0 .2em .4em rgba(0,0,0,.4);
+  background: lightgreen;
+}
+
+/* add highligt to the value the user picks */
+
+.select .option {
+  padding: .2em .3em;
+}
+
+.select .highlight {
+  background: #000000;
+  color: #FFFFFF;
+}
